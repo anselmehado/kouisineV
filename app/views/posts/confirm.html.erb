@@ -1,0 +1,13 @@
+<h3>Les informations suivantes doivent être envoyées.</h3>
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+
+<div class="post_content">
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+</div> <br>
+
+  <%= form.submit  "Registre" %>
+    <%= form.submit "戻る" , name: 'back'%>
+<% end %>
+
+<%= link_to 'Back', :back %>

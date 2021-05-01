@@ -1,0 +1,19 @@
+<%= form_with(model: @post, local: true ,url: choose_new_or_edit) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @post.errors.count %>There are errors.</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div> <br>
+  <% end %>
+
+  <div class="post_content" maxlength ="140">
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div> <br>
+  <%= form.submit %>
+<% end %> <br>
+<%= link_to "ブログ一覧画面にもどる", posts_path %>

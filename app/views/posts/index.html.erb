@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MBlogs Dive</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/sample.css">
+</head>
+<body>
+  <header class="header clearfix">
+
+    <ul class="menu_horizontal">
+		<li class="bouton_gauche"><a href="#">Blogs Dive</a></li>
+    </ul>
+  </header>
+
+  <h1>All blogs list</h1>
+
+  <p><%= notice %></p>
+
+  <% @posts.each do |post| %>
+<p><b>Posted by:</b> <%= post.user.name %></p>
+
+    <label for="">Date de creation du blog:</label> <%= post.created_at %> <br>
+
+<textarea id="w3review" name="w3review" rows="4" cols="25" maxlength="140">
+
+  <%= post.content %>
+
+</textarea> <br>
+
+<%= link_to 'Show', post %>
+
+<a href="<%= edit_post_path(post.id) %> " class="bt-btn-primary">Edit</a>
+
+<td><%= link_to 'Delete post', post_path(post.id), method: :delete,data: { confirm: 'Can I really edit it?' } %></td>
+
+<br>
+  <% end %>
+
+  <br>
+<%= link_to 'Post a new blog', new_post_path %>
+
+</body>
+</html>
