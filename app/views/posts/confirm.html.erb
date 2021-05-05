@@ -1,9 +1,10 @@
 <h3>Les informations suivantes doivent être envoyées.</h3>
 <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
 
-<div class="post_content">
-  <%= form.label :content %>
-  <%= form.text_area :content %>
+<div class="post_image">
+
+  <%= form.label :image %>
+  <%= image_tag @post.avatar.url %>
 </div> <br>
 
   <%= form.submit  "Registre" %>

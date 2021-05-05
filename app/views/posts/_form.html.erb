@@ -10,9 +10,11 @@
     </div> <br>
   <% end %>
 
-  <div class="post_content" maxlength ="140">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+
+  <div class="post_image">
+ <br>
+    <%= form.label :image %>
+    <%= form.file_field :avatar %>
   </div> <br>
   <%= form.submit %>
 <% end %> <br>

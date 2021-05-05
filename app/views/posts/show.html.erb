@@ -1,17 +1,18 @@
 <%= form_with(model: @post, local: true) do |form| %>
 
-  <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
+<%# 
     <% unless @post.user_id == current_user.id %>
     <% if @favorite.present? %>
       <%= link_to 'Remove favorite', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
     <% else %> <br>
       <%= link_to 'Favorite', favorites_path(post_id: @post.id), method: :post, class: 'btn btn-primary' %>
     <% end %>
-  <% end %>
+  <% end %> %>
+
+  <p>
+  <strong>Image:</strong>
+  <%= @post.avatar.url %>
+  </p>
 
   <%= form.submit %>
     <% end %>

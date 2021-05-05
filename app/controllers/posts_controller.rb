@@ -33,6 +33,24 @@ class PostsController < ApplicationController
     end
   end
 
+
+
+  # def create
+  #   @feed = Feed.new(feed_params)
+  #
+  #   respond_to do |format|
+  #     if @feed.save
+  #       format.html { redirect_to @feed, notice: "Feed was successfully created." }
+  #       format.json { render :show, status: :created, location: @feed }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @feed.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+
+
   def update
     if @post.update(post_params)
       redirect_to posts_path, notice: "I edited the blog!"
@@ -58,7 +76,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:avatar)
   end
 
 
